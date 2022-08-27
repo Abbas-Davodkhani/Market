@@ -1,0 +1,14 @@
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\bin\Debug\net6.0\DataLayer.deps.json
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\bin\Debug\net6.0\DataLayer.runtimeconfig.json
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\bin\Debug\net6.0\DataLayer.dll
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\bin\Debug\net6.0\DataLayer.pdb
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\DataLayer.csproj.AssemblyReference.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfoInputs.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfo.cs
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CoreCompileInputs.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\DataLayer.dll
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\refint\DataLayer.dll
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\DataLayer.pdb
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\DataLayer.genruntimeconfig.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\DataLayer\obj\Debug\net6.0\ref\DataLayer.dll
