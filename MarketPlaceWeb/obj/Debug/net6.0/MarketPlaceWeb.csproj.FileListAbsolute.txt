@@ -1,11 +1,3 @@
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.csproj.AssemblyReference.cache
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.GeneratedMSBuildEditorConfig.editorconfig
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.AssemblyInfoInputs.cache
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.AssemblyInfo.cs
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.csproj.CoreCompileInputs.cache
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.MvcApplicationPartsAssemblyInfo.cache
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.RazorAssemblyInfo.cache
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.RazorAssemblyInfo.cs
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\appsettings.Development.json
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\appsettings.json
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\libman.json
@@ -15,6 +7,7 @@ E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\Market
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\MarketPlaceWeb.runtimeconfig.json
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\MarketPlaceWeb.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\MarketPlaceWeb.pdb
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\GoogleReCaptcha.V3.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Humanizer.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\MessagePack.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\MessagePack.Annotations.dll
@@ -253,6 +246,14 @@ E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\Market
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\DataLayer.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Application.pdb
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\DataLayer.pdb
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.csproj.AssemblyReference.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.AssemblyInfoInputs.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.AssemblyInfo.cs
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.csproj.CoreCompileInputs.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.MvcApplicationPartsAssemblyInfo.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.RazorAssemblyInfo.cache
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.RazorAssemblyInfo.cs
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\staticwebassets.build.json
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\staticwebassets.development.json
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\scopedcss\bundle\MarketPlaceWeb.styles.css
@@ -262,4 +263,3 @@ E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\Market
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.pdb
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\MarketPlaceWeb.genruntimeconfig.cache
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\obj\Debug\net6.0\ref\MarketPlaceWeb.dll
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\GoogleReCaptcha.V3.dll

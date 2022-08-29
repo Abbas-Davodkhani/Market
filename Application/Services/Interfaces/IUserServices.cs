@@ -9,5 +9,6 @@ namespace Application.Services.Interfaces
         Task<bool> IsUserExsistByMobileNumberAsync(string mobileNumber);
         Task<User> GetUserByMobileAsync(string mobile);
         Task<LoginUserResult> GetUserForLogin(LoginUserDTO loginUser);
+        Task<ForgotPasswordUserResult> RecoverUserPassword(ForgotPasswordDTO forgotPasswordDTO); 
     }
 }

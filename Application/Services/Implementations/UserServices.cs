@@ -70,6 +70,16 @@ namespace Application.Services.Implementations
             }
             
         }
+
+        public async Task<ForgotPasswordUserResult> RecoverUserPassword(ForgotPasswordDTO forgotPasswordDTO)
+        {
+            var user = await _userRepositroy.GetQuery().SingleOrDefaultAsync(x => x.Mobile == forgotPasswordDTO.Mobile);
+            if (user == null) return ForgotPasswordUserResult.NotFound;
+            string newPassword = new Random().Next(1234 , 6789).ToString();
+            user.Password = _passwordHelper.EncodePasswordMd5(newPassword);
+            return ForgotPasswordUserResult.Success;
+        }
+
         #endregion
         #region Dispose
         public async ValueTask DisposeAsync()
