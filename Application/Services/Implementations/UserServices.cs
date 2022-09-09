@@ -36,7 +36,9 @@ namespace Application.Services.Implementations
                     LastName = regiser.LastName,
                     IsMobileActive = false,
                     Password = _passwordHelper.EncodePasswordMd5(regiser.Password),
-                    MobileActiveCode =  Guid.NewGuid().ToString("N")
+                    MobileActiveCode =  new Random().Next(1234 , 9999).ToString() , 
+                    EmailActiveCode = "000"
+                    
                 };
                 await _userRepositroy.AddEntityAsync(user);
                 await _userRepositroy.SaveChangesAsync();
@@ -82,39 +84,28 @@ namespace Application.Services.Implementations
             return ForgotPasswordUserResult.Success;
         }
 
+        public async Task<bool> ActiveMobileAsync(ActivateMobileDTO activateMobileDTO)
+        {
+            var user = await GetUserByMobileAsync(activateMobileDTO.Mobile);
+            if(user != null)
+            {
+                if(user.MobileActiveCode == activateMobileDTO.MobileActiveCode)
+                {
+                    user.IsMobileActive = true;
+                    user.MobileActiveCode = new Random().Next(1000, 9999).ToString();
+                    await _userRepositroy.SaveChangesAsync();
+                    return true;
+                }   
+            }
+            return false;
+        }
+
         #endregion
         #region Dispose
         public async ValueTask DisposeAsync()
         {
             await _userRepositroy.DisposeAsync();
         }
-
-        Task<RegisterUserResult> IUserServices.RegisterAsync(RegisterUserDTO regiser)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<bool> IUserServices.IsUserExsistByMobileNumberAsync(string mobileNumber)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<User> IUserServices.GetUserByMobileAsync(string mobile)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<LoginUserResult> IUserServices.GetUserForLogin(LoginUserDTO loginUser)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<ForgotPasswordUserResult> IUserServices.RecoverUserPassword(ForgotPasswordDTO forgotPasswordDTO)
-        {
-            throw new NotImplementedException();
-        }
-
-
         #endregion
     }
 }

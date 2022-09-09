@@ -52,7 +52,7 @@ namespace MarketPlaceWeb.Controllers
                     case RegisterUserResult.Success:
                         TempData[SuccessMessage] = "ثبت نام با موفقیت انجام شد";
                         TempData[InfoMessage] = "پیامک فعال سازی برای شما ارسال شد";
-                        break;
+                        return RedirectToAction("ActivateMobile", "Account", new { mobile = register.Mobile });
                 }
 
             }
@@ -120,6 +120,7 @@ namespace MarketPlaceWeb.Controllers
             return Redirect("/");
         }
         #endregion
+
         #region ForgotPassword
         [HttpGet("forgot-pass")]
         public IActionResult ForgotPassword()
@@ -149,6 +150,37 @@ namespace MarketPlaceWeb.Controllers
                 }
             }
             return View(forgot);
+        }
+        #endregion
+
+        #region ActiveMobile
+        [HttpGet("activate-mobile/{mobile}")]
+        public async Task<IActionResult> ActivateMobile(string mobile)
+        {
+            if (User.Identity.IsAuthenticated) return Redirect("/");
+            var activateMobileDto = new ActivateMobileDTO { Mobile = mobile };
+            return View(activateMobileDto);
+        }
+        [HttpPost("activate-mobile/{mobile}"), ValidateAntiForgeryToken]
+        public async Task<IActionResult> ActivateMobile(ActivateMobileDTO activateMobile)
+        {
+            if (!await _captchaValidator.IsCaptchaPassedAsync(activateMobile.Captcah))
+            {
+                TempData[ErrorMessage] = "کذ کپچا تایید نشده است";
+                return View();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var result = await _userServices.ActiveMobileAsync(activateMobile);
+                if(result)
+                {
+                    TempData[SuccessMessage] = "موبایل شما با موفقیت تایید شد";
+                    return RedirectToAction("login");
+                }
+            }
+
+            return View(activateMobile);
         }
         #endregion
     }
