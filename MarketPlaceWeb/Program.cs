@@ -5,7 +5,12 @@ using DataLayer.Repositories.GenericRepostitory;
 using GoogleReCaptcha.V3;
 using GoogleReCaptcha.V3.Interface;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 
@@ -19,6 +24,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IPasswordHelper, PasswordHelper>();
+builder.Services.AddScoped<ISiteService, SiteService>();
 //builder.Services.AddSingleton(HtmlEn)
 #endregion 
 #region context

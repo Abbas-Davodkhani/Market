@@ -1,5 +1,7 @@
 ﻿using DataLayer.DTOs.Account;
 using DataLayer.Entities.Account;
+using System;
+using System.Threading.Tasks;
 
 namespace Application.Services.Interfaces
 {

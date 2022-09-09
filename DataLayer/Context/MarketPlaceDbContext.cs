@@ -1,4 +1,5 @@
 ﻿using DataLayer.Entities.Account;
+using DataLayer.Entities.Site;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,9 @@ namespace DataLayer.Context
         #region Account
         public DbSet<User> Users { get; set; }
         #endregion
-
+        #region Site
+        public DbSet<SiteSetting> SiteSettings { get; set; }
+        #endregion
         #region On Model Creating
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

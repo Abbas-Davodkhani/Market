@@ -3,7 +3,9 @@ using DataLayer.DTOs.Account;
 using DataLayer.Entities.Account;
 using DataLayer.Repositories.GenericRepostitory;
 using Microsoft.EntityFrameworkCore;
-
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Application.Services.Implementations
 {
@@ -87,7 +89,32 @@ namespace Application.Services.Implementations
             await _userRepositroy.DisposeAsync();
         }
 
-       
+        Task<RegisterUserResult> IUserServices.RegisterAsync(RegisterUserDTO regiser)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<bool> IUserServices.IsUserExsistByMobileNumberAsync(string mobileNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<User> IUserServices.GetUserByMobileAsync(string mobile)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<LoginUserResult> IUserServices.GetUserForLogin(LoginUserDTO loginUser)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<ForgotPasswordUserResult> IUserServices.RecoverUserPassword(ForgotPasswordDTO forgotPasswordDTO)
+        {
+            throw new NotImplementedException();
+        }
+
+
         #endregion
     }
 }
