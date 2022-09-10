@@ -35,6 +35,7 @@ namespace MarketPlaceWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterUserDTO register)
         {
+
             if(!await _captchaValidator.IsCaptchaPassedAsync(register.Captcah))
             {
                 TempData[ErrorMessage] = "کد کپچا تایید نشده است";

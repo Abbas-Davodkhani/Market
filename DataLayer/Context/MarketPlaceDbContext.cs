@@ -1,4 +1,5 @@
 ﻿using DataLayer.Entities.Account;
+using DataLayer.Entities.Contacts;
 using DataLayer.Entities.Site;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,6 +22,9 @@ namespace DataLayer.Context
         #endregion
         #region Site
         public DbSet<SiteSetting> SiteSettings { get; set; }
+        #endregion
+        #region ContactUs
+        public DbSet<ContactUs> ContactUses { get; set; }
         #endregion
         #region On Model Creating
         protected override void OnModelCreating(ModelBuilder modelBuilder)

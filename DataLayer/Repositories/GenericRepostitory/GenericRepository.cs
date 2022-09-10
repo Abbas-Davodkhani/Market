@@ -28,6 +28,7 @@ namespace DataLayer.Repositories.GenericRepostitory
         public async Task AddEntityAsync(TEntity entity)
         {
             entity.CreatedDate = DateTime.Now;
+            entity.UpdatedDate = DateTime.Now;
             await _dbSet.AddAsync(entity);
         }
         // GetById

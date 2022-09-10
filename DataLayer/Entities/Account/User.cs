@@ -1,4 +1,6 @@
 ﻿using DataLayer.Entities.Common;
+using DataLayer.Entities.Contacts;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DataLayer.Entities.Account
@@ -58,6 +60,7 @@ namespace DataLayer.Entities.Account
         #endregion
 
         #region relationship
+        public ICollection<ContactUs> ContactUses { get; set; }
         #endregion 
     }
 }

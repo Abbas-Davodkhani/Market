@@ -25,6 +25,7 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<IPasswordHelper, PasswordHelper>();
 builder.Services.AddScoped<ISiteService, SiteService>();
+builder.Services.AddScoped<IContactUsService, ContactUsService>();
 //builder.Services.AddSingleton(HtmlEn)
 #endregion 
 #region context
