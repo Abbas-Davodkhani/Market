@@ -15,6 +15,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xBY2NvdW50XENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xIb21lXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Shared/Components/UserSideBar/UserSideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xTaGFyZWRcQ29tcG9uZW50c1xVc2VyU2lkZUJhclxVc2VyU2lkZUJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Account/ActivateMobile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY3RpdmF0ZU1vYmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
