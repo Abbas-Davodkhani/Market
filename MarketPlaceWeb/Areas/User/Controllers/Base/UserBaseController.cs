@@ -8,5 +8,9 @@ namespace MarketPlaceWeb.Areas.User.Controllers.Base
     [Route("user")]
     public class UserBaseController : Controller
     {
+        protected string SuccessMessage = "SuccessMessage";
+        protected string ErrorMessage = "ErrorMessage";
+        protected string WarningMessage = "WarningMessage";
+        protected string InfoMessage = "InfoMessage";
     }
 }

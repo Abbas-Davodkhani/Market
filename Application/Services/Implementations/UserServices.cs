@@ -100,7 +100,24 @@ namespace Application.Services.Implementations
             return false;
         }
 
+        public async Task<bool> ChangeUserPasswordAsync(ChangePasswordDTO changePasswordDTO, long currentUserId)
+        {
+            var user = await _userRepositroy.GetByIdAsync(currentUserId);
+            if(user != null)
+            {
+                string newPassword = _passwordHelper.EncodePasswordMd5(changePasswordDTO.NewPassword);
+                if(newPassword != user.Password)
+                {
+                    user.Password = newPassword;
+                    _userRepositroy.UpdateEntity(user);
+                    await _userRepositroy.SaveChangesAsync();
+                    return true;
+                }
+            }
+            return false;
+        }
         #endregion
+
         #region Dispose
         public async ValueTask DisposeAsync()
         {

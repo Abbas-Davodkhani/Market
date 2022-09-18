@@ -17,6 +17,7 @@ namespace DataLayer.DTOs.Account
         [Display(Name = "تکرار کلمه ی عبور جدید")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد")]
+        [Compare("NewPassword", ErrorMessage = "کلمه های عبور باهم مغایرت دارند")]
         public string ConfirmNewPassword { get; set; }
     }
 }
