@@ -21,8 +21,6 @@ namespace MarketPlaceWeb.ViewComponents
           
     }
     #endregion 
-
-
     #region Footer
     public class SiteFooterViewComponent : ViewComponent
     {
@@ -39,5 +37,20 @@ namespace MarketPlaceWeb.ViewComponents
         }
         #endregion   
     }
-    #endregion 
+    #endregion
+    #region Slider
+    public class HeaderSliderViewComponent : ViewComponent
+    {
+        private readonly ISiteService _siteService;
+        public HeaderSliderViewComponent(ISiteService siteService)
+        {
+            _siteService = siteService;
+        }
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var sliders = await _siteService.GetAllActiveSlidrsAsync();
+            return View("HeaderSlider" , sliders);
+        }
+    }
+    #endregion
 }

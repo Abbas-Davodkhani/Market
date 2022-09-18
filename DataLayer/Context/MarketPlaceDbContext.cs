@@ -2,26 +2,22 @@
 using DataLayer.Entities.Contacts;
 using DataLayer.Entities.Site;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataLayer.Context
 {
     public class MarketPlaceDbContext : DbContext
     {
         #region Constructor
-        public MarketPlaceDbContext(DbContextOptions<MarketPlaceDbContext> options) : base(options){ }
+        public MarketPlaceDbContext(DbContextOptions<MarketPlaceDbContext> options) : base(options) { }
         #endregion
-
-
         #region Account
         public DbSet<User> Users { get; set; }
         #endregion
         #region Site
         public DbSet<SiteSetting> SiteSettings { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<SiteBanner> SiteBanners { get; set; }
         #endregion
         #region ContactUs
         public DbSet<ContactUs> ContactUses { get; set; }

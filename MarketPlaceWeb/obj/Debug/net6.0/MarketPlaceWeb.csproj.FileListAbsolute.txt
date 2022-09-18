@@ -13,7 +13,8 @@ E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\Market
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\MessagePack.Annotations.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.Build.Locator.dll
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.Build.dll
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -43,6 +44,7 @@ E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\Market
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll

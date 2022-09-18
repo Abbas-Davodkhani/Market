@@ -26,6 +26,8 @@ namespace DataLayer.Entities.Site
 
         [Display(Name = "آدرس")]
         public string Address { get; set; }
+        [Display(Name = "درباره ما")]
+        public string AboutUs { get; set; } 
 
         [Display(Name = "اصلی هست / نیست")]
         public bool IsDefault { get; set; }
