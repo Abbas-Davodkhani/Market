@@ -1,4 +1,6 @@
-﻿namespace Application.Utils
+﻿using System.IO;
+
+namespace Application.Utils
 {
     public static class PathExtension
     {
@@ -6,9 +8,13 @@
 
         public static string DefaultAvatar = "/img/defaults/avatar.jpg";
 
-        #endregion 
+        #endregion
         #region UserAvatar
         public static string UserAvatarOrigin = "/Content/Images/UserAvatar/origin/";
+        public static string UserAvatarOriginServer = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Content/Images/UserAvatar/origin/");
+
+        public static string UserAvatarThumb = "/Content/Images/UserAvatar/Thumb/";
+        public static string UserAvatarThumbServer = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Content/Images/UserAvatar/Thumb/");
         #endregion
         #region slider
 

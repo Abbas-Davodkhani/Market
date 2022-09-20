@@ -30,7 +30,7 @@
         <div class="account_dashboard">
             <div class="row">
                 <div class="col-sm-12 col-md-3 col-lg-3">
-                    @await Component.InvokeAsync("UserSidebar")
+                    @await Component.InvokeAsync("UserSideBar")
                 </div>
                 <div class="col-sm-12 col-md-9 col-lg-9">
                     <!-- Tab panes -->
@@ -40,7 +40,7 @@
                             <div class="login">
                                 <div class="login_form_container">
                                     <div class="account_login_form">
-                                        <form asp-area="User" asp-controller="Account" asp-action="EditProfile">
+                                        <form asp-area="User" asp-controller="Account" asp-action="EditProfile" enctype="multipart/form-data">
                                             <label>نام</label>
                                             <input type="text" asp-for="FirstName">
                                             <span class="text-danger" asp-validation-for="FirstName"></span>

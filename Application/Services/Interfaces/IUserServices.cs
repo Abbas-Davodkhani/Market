@@ -1,5 +1,6 @@
 ﻿using DataLayer.DTOs.Account;
 using DataLayer.Entities.Account;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Threading.Tasks;
 
@@ -15,6 +16,6 @@ namespace Application.Services.Interfaces
         Task<bool> ActiveMobileAsync(ActivateMobileDTO activateMobileDTO);
         Task<bool> ChangeUserPasswordAsync(ChangePasswordDTO changePasswordDTO , long currentUserId);
         Task<EditUserProfileDTO> GetProfileForEdit(long userId);
-        Task<EditUserProfileResult> EditUserProfile(EditUserProfileDTO profile, long userId);
+        Task<EditUserProfileResult> EditUserProfile(EditUserProfileDTO profile, long userId , IFormFile userAvatar);
     }
 }

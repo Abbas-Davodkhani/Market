@@ -1,9 +1,13 @@
-﻿using Application.Services.Interfaces;
+﻿using Application.Extensions;
+using Application.Services.Interfaces;
+using Application.Utils;
 using DataLayer.DTOs.Account;
 using DataLayer.Entities.Account;
 using DataLayer.Repositories.GenericRepostitory;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -128,7 +132,7 @@ namespace Application.Services.Implementations
                Avatar = user.Avatar,
             };
         }
-        public async Task<EditUserProfileResult> EditUserProfile(EditUserProfileDTO profile, long userId)
+        public async Task<EditUserProfileResult> EditUserProfile(EditUserProfileDTO profile, long userId , IFormFile userAvatar)
         {
             var user = await _userRepositroy.GetByIdAsync(userId);
             if (user == null) return EditUserProfileResult.NotFound;
@@ -138,6 +142,13 @@ namespace Application.Services.Implementations
 
             user.FirstName = profile.FirstName;
             user.LastName = profile.LastName;
+            if(CheckContentImage.IsImage(userAvatar) && userAvatar != null)
+            {
+                string newImageName = Guid.NewGuid().ToString("N") + Path.GetExtension(userAvatar.FileName);
+                userAvatar.AddImageToServer(newImageName, PathExtension.UserAvatarOriginServer, 100, 100, PathExtension.UserAvatarThumbServer, user.Avatar);
+                user.Avatar = newImageName;
+
+            }
             _userRepositroy.UpdateEntity(user);
             await _userRepositroy.SaveChangesAsync();
 
