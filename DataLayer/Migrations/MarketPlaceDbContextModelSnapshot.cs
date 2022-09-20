@@ -142,6 +142,89 @@ namespace DataLayer.Migrations
                     b.ToTable("ContactUses");
                 });
 
+            modelBuilder.Entity("DataLayer.Entities.Contacts.Ticket", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsReadByAdmin")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsReadByOwner")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("OwnerId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("TicketPriority")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TicketSection")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TicketState")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("Ticket");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Contacts.TicketMessage", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("SenderId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("TicketId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SenderId");
+
+                    b.HasIndex("TicketId");
+
+                    b.ToTable("TicketMessage");
+                });
+
             modelBuilder.Entity("DataLayer.Entities.Site.SiteBanner", b =>
                 {
                     b.Property<long>("Id")
@@ -286,14 +369,53 @@ namespace DataLayer.Migrations
                     b.HasOne("DataLayer.Entities.Account.User", "User")
                         .WithMany("ContactUses")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Contacts.Ticket", b =>
+                {
+                    b.HasOne("DataLayer.Entities.Account.User", "Owner")
+                        .WithMany("Tickets")
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Contacts.TicketMessage", b =>
+                {
+                    b.HasOne("DataLayer.Entities.Account.User", "Sender")
+                        .WithMany("TicketMessages")
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("DataLayer.Entities.Contacts.Ticket", "Ticket")
+                        .WithMany("TicketMessages")
+                        .HasForeignKey("TicketId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Sender");
+
+                    b.Navigation("Ticket");
                 });
 
             modelBuilder.Entity("DataLayer.Entities.Account.User", b =>
                 {
                     b.Navigation("ContactUses");
+
+                    b.Navigation("TicketMessages");
+
+                    b.Navigation("Tickets");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Contacts.Ticket", b =>
+                {
+                    b.Navigation("TicketMessages");
                 });
 #pragma warning restore 612, 618
         }

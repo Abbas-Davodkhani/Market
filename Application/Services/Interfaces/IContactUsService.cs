@@ -6,6 +6,11 @@ namespace Application.Services.Interfaces
 {
     public interface IContactUsService : IAsyncDisposable
     {
+        #region ContactUs
         Task CreateContactUs(CreateContactUsDTO contactUs, string userIp, long? userId);
+        #endregion
+        #region Ticket
+        Task<AddTicketResult> AddTicket(AddTicketViewModel ticketViewModel , long userId);
+        #endregion
     }
 }

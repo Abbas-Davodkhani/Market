@@ -14,9 +14,14 @@ namespace Application.Services.Implementations
     {
         #region Constructore
         private readonly IGenericRepository<ContactUs> _contactUsRepository;
-        public ContactUsService(IGenericRepository<ContactUs> contactUsRepository)
+        private readonly IGenericRepository<Ticket> _ticketRepository;
+        private readonly IGenericRepository<TicketMessage> _ticketMessageRepository;
+        public ContactUsService(IGenericRepository<ContactUs> contactUsRepository , IGenericRepository<Ticket> ticketRepository
+            , IGenericRepository<TicketMessage> ticketMessageRepository)
         {
             _contactUsRepository = contactUsRepository;
+            _ticketRepository = ticketRepository;   
+            _ticketMessageRepository = ticketMessageRepository; 
         }
 
         #endregion
@@ -39,7 +44,36 @@ namespace Application.Services.Implementations
 
         }
         #endregion
+        #region Ticket
+        public async Task<AddTicketResult> AddTicket(AddTicketViewModel ticketViewModel, long userId)
+        {
+            if (ticketViewModel.Text == null) return AddTicketResult.Error;
+            var tickket = new Ticket
+            {
+                IsReadByOwner = true ,
+                TicketPriority = ticketViewModel.TicketPriority,
+                Title = ticketViewModel.Title,
+                OwnerId = userId, 
+                TicketState = TicketState.InProgress 
+            };
 
+            await _ticketRepository.AddEntityAsync(tickket);
+            await _ticketRepository.SaveChangesAsync();
+
+            var ticketMessage = new TicketMessage
+            {
+                Text = ticketViewModel.Text,
+                TicketId = tickket.Id,
+                SenderId = userId
+            };
+
+            await _ticketMessageRepository.AddEntityAsync(ticketMessage);
+            await _ticketMessageRepository.SaveChangesAsync();
+
+            return AddTicketResult.Success;
+
+        }
+        #endregion
         #region Dispose
         public async ValueTask DisposeAsync()
         {
