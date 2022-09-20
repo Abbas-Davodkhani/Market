@@ -116,6 +116,33 @@ namespace Application.Services.Implementations
             }
             return false;
         }
+        public async Task<EditUserProfileDTO> GetProfileForEdit(long userId)
+        {
+            var user = await _userRepositroy.GetByIdAsync(userId);
+            if(user == null) return null;
+
+            return new EditUserProfileDTO
+            {
+               FirstName = user.FirstName,
+               LastName = user.LastName,
+               Avatar = user.Avatar,
+            };
+        }
+        public async Task<EditUserProfileResult> EditUserProfile(EditUserProfileDTO profile, long userId)
+        {
+            var user = await _userRepositroy.GetByIdAsync(userId);
+            if (user == null) return EditUserProfileResult.NotFound;
+
+            if (user.IsBlocked) return EditUserProfileResult.IsBlocked;
+            if (!user.IsMobileActive) return EditUserProfileResult.IsNotActive;
+
+            user.FirstName = profile.FirstName;
+            user.LastName = profile.LastName;
+            _userRepositroy.UpdateEntity(user);
+            await _userRepositroy.SaveChangesAsync();
+
+            return EditUserProfileResult.Success;
+        }
         #endregion
 
         #region Dispose

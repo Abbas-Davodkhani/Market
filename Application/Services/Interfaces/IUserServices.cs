@@ -14,5 +14,7 @@ namespace Application.Services.Interfaces
         Task<ForgotPasswordUserResult> RecoverUserPassword(ForgotPasswordDTO forgotPasswordDTO);
         Task<bool> ActiveMobileAsync(ActivateMobileDTO activateMobileDTO);
         Task<bool> ChangeUserPasswordAsync(ChangePasswordDTO changePasswordDTO , long currentUserId);
+        Task<EditUserProfileDTO> GetProfileForEdit(long userId);
+        Task<EditUserProfileResult> EditUserProfile(EditUserProfileDTO profile, long userId);
     }
 }
