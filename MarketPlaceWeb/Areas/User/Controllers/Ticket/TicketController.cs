@@ -12,7 +12,6 @@ namespace MarketPlaceWeb.Areas.User.Controllers
         #region Constructor
 
         private readonly IContactUsService _contactServices;
-
         public TicketController(IContactUsService contactServices)
         {
             _contactServices = contactServices;
@@ -20,9 +19,14 @@ namespace MarketPlaceWeb.Areas.User.Controllers
 
         #endregion
         #region List
-        public IActionResult Index()
+        [HttpGet("tickets")]
+        public async Task<IActionResult> Index(FilterTicketDTO filter)
         {
-            return View();
+            filter.UserId = User.GetUserId();
+            filter.FilterTicketState = FilterTicketState.NotDeleted;
+            filter.OrderBy = FilterTicketOrder.CreateDate_DES;
+
+            return View(await _contactServices.FilterTicket(filter));
         }
         #endregion
         #region AddTicket
@@ -33,7 +37,7 @@ namespace MarketPlaceWeb.Areas.User.Controllers
         }
 
         [HttpPost("add-ticket"), ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddTicket(AddTicketViewModel ticket)
+        public async Task<IActionResult> AddTicket(AddTicketDTO ticket)
         {
             if (ModelState.IsValid)
             {
@@ -51,6 +55,43 @@ namespace MarketPlaceWeb.Areas.User.Controllers
             }
 
             return View(ticket);
+        }
+        #endregion
+        #region Ticket Details
+        [HttpGet("tickets/{ticketId}")]
+        public async Task<IActionResult> TicketDetails(long ticketId)
+        {
+            var ticket = await _contactServices.GetTicketForShowAsync(ticketId, User.GetUserId());
+            if (ticket == null) return NotFound();
+                
+
+            return View(ticket);
+        }
+        #endregion
+        #region AnswereTicket
+        [HttpPost("answere-ticket")]
+        public async Task<IActionResult> AnswereTicket(AnswerTicketDTO answere)
+        {
+            if (string.IsNullOrEmpty(answere.Text)) TempData[ErrorMessage] = "لطفا متن پیام را وارد کنید";
+            if(ModelState.IsValid)
+            {
+                var res = await _contactServices.AnswereTicket(answere, User.GetUserId());
+                switch(res)
+                {
+                    case AnswerTicketResult.NotForUser:
+                        TempData[ErrorMessage] = "عدم دسترسی";
+                        TempData[InfoMessage] = "در صورت تکرار این مورد ، دسترسی شما به صورت کلی از سیستم قطع خواهد شد";
+                        return RedirectToAction("Index");
+                    case AnswerTicketResult.NotFound:
+                        TempData[WarningMessage] = "اطلاعات مورد نظر یافت نشد";
+                        return RedirectToAction("Index");
+                    case AnswerTicketResult.Success:
+                        TempData[SuccessMessage] = "اطلاعات مورد نظر با موفقیت ثبت شد";
+                        break;
+                }
+            }
+
+            return RedirectToAction("TicketDetails" , "Ticket" , new {area="User" , ticketId = answere.Id});
         }
         #endregion
     }

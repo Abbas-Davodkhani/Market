@@ -10,7 +10,10 @@ namespace Application.Services.Interfaces
         Task CreateContactUs(CreateContactUsDTO contactUs, string userIp, long? userId);
         #endregion
         #region Ticket
-        Task<AddTicketResult> AddTicket(AddTicketViewModel ticketViewModel , long userId);
+        Task<AddTicketResult> AddTicket(AddTicketDTO ticketViewModel , long userId);
+        Task<FilterTicketDTO> FilterTicket(FilterTicketDTO filterTicket);
+        Task<TicketDetailDTO> GetTicketForShowAsync(long ticketId, long userId);
+        Task<AnswerTicketResult> AnswereTicket(AnswerTicketDTO answere, long userId);
         #endregion
     }
 }

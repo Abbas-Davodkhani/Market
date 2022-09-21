@@ -16,6 +16,10 @@ namespace Application.Utils
         public static string UserAvatarThumb = "/Content/Images/UserAvatar/Thumb/";
         public static string UserAvatarThumbServer = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Content/Images/UserAvatar/Thumb/");
         #endregion
+        #region UploadImage
+        public static string UploadImageOrigin = "/img/Upload/";
+        public static string UploadImageOriginServer = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Upload/");
+        #endregion
         #region slider
 
         public static string SliderOrigin = "/img/slider/";

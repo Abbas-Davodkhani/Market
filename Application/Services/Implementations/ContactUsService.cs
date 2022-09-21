@@ -1,11 +1,11 @@
-﻿using Application.Services.Interfaces;
+﻿using Application.Extensions;
+using Application.Services.Interfaces;
 using DataLayer.DTOs.Contacts;
+using DataLayer.DTOs.Paging;
 using DataLayer.Entities.Contacts;
 using DataLayer.Repositories.GenericRepostitory;
-using System;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Application.Services.Implementations
@@ -16,12 +16,12 @@ namespace Application.Services.Implementations
         private readonly IGenericRepository<ContactUs> _contactUsRepository;
         private readonly IGenericRepository<Ticket> _ticketRepository;
         private readonly IGenericRepository<TicketMessage> _ticketMessageRepository;
-        public ContactUsService(IGenericRepository<ContactUs> contactUsRepository , IGenericRepository<Ticket> ticketRepository
+        public ContactUsService(IGenericRepository<ContactUs> contactUsRepository, IGenericRepository<Ticket> ticketRepository
             , IGenericRepository<TicketMessage> ticketMessageRepository)
         {
             _contactUsRepository = contactUsRepository;
-            _ticketRepository = ticketRepository;   
-            _ticketMessageRepository = ticketMessageRepository; 
+            _ticketRepository = ticketRepository;
+            _ticketMessageRepository = ticketMessageRepository;
         }
 
         #endregion
@@ -45,16 +45,16 @@ namespace Application.Services.Implementations
         }
         #endregion
         #region Ticket
-        public async Task<AddTicketResult> AddTicket(AddTicketViewModel ticketViewModel, long userId)
+        public async Task<AddTicketResult> AddTicket(AddTicketDTO ticketViewModel, long userId)
         {
             if (ticketViewModel.Text == null) return AddTicketResult.Error;
             var tickket = new Ticket
             {
-                IsReadByOwner = true ,
+                IsReadByOwner = true,
                 TicketPriority = ticketViewModel.TicketPriority,
                 Title = ticketViewModel.Title,
-                OwnerId = userId, 
-                TicketState = TicketState.InProgress 
+                OwnerId = userId,
+                TicketState = TicketState.InProgress
             };
 
             await _ticketRepository.AddEntityAsync(tickket);
@@ -73,11 +73,98 @@ namespace Application.Services.Implementations
             return AddTicketResult.Success;
 
         }
+        public async Task<FilterTicketDTO> FilterTicket(FilterTicketDTO filterTicket)
+        {
+            var ticket = _ticketRepository.GetQuery().AsQueryable();
+            #region State
+            switch (filterTicket.FilterTicketState)
+            {
+                case FilterTicketState.All:
+                    break;
+                case FilterTicketState.Deleted:
+                    ticket = ticket.Where(t => t.IsDeleted);
+                    break;
+                case FilterTicketState.NotDeleted:
+                    ticket = ticket.Where(t => !t.IsDeleted);
+                    break;
+            }
+
+            switch (filterTicket.OrderBy)
+            {
+                case FilterTicketOrder.CreateDate_DES:
+                    ticket = ticket.OrderByDescending(x => x.CreatedDate);
+                    break;
+                case FilterTicketOrder.CreateDate_ASC:
+                    ticket = ticket.OrderBy(t => t.CreatedDate);
+                    break;
+            }
+            #endregion
+
+            #region Filter
+            if (filterTicket.TicketSection != null)
+                ticket = ticket.Where(t => t.TicketSection == filterTicket.TicketSection.Value);
+
+            if (filterTicket.TicketPriority != null)
+                ticket = ticket.Where(t => t.TicketPriority == filterTicket.TicketPriority.Value);
+
+            if (!string.IsNullOrEmpty(filterTicket.Title))
+                ticket = ticket.Where(t => EF.Functions.Like(filterTicket.Title, $"%{filterTicket.Title}%"));
+            #endregion
+
+            #region Paging
+            var pager = Pager.Build(filterTicket.PageId, await ticket.CountAsync(), filterTicket.TakeEntity,
+                    filterTicket.HomManyPageAfterAndBefore);
+
+            var allEntities = await ticket.Paging(pager).ToListAsync();
+            #endregion
+
+            return filterTicket.SetPaging(pager).SetTickets(allEntities);
+        }
+        public async Task<TicketDetailDTO> GetTicketForShowAsync(long ticketId, long userId)
+        {
+            var ticket = await _ticketRepository.GetQuery().AsQueryable().
+                Include(t => t.Owner)
+                .SingleOrDefaultAsync(t => t.Id == ticketId);
+
+            if (ticket == null || ticket.OwnerId != userId) return null;
+
+            return new TicketDetailDTO
+            {
+                Ticket = ticket,
+                TicketMessages = await _ticketMessageRepository.GetQuery().AsQueryable().
+                    OrderByDescending(t => t.CreatedDate).Where(t => t.TicketId == ticket.Id && !t.IsDeleted)
+                    .ToListAsync()
+            };
+        }
+        public async Task<AnswerTicketResult> AnswereTicket(AnswerTicketDTO answere, long userId)
+        {
+            var ticket = await _ticketRepository.GetByIdAsync(answere.Id);
+            if (ticket == null) return AnswerTicketResult.NotFound;
+            if (ticket.OwnerId != userId) return AnswerTicketResult.NotForUser;
+
+            var ticketMessage = new TicketMessage
+            {
+                Text = answere.Text,
+                SenderId = userId,
+                TicketId = ticket.Id
+            };
+
+            await _ticketMessageRepository.AddEntityAsync(ticketMessage);
+            await _ticketMessageRepository.SaveChangesAsync();
+
+            ticket.IsReadByAdmin = false;
+            ticket.IsReadByOwner = true;
+            await _ticketRepository.SaveChangesAsync();
+
+            return AnswerTicketResult.Success;
+        }
         #endregion
         #region Dispose
         public async ValueTask DisposeAsync()
         {
             await _contactUsRepository.DisposeAsync();
+            await _ticketMessageRepository.DisposeAsync();
+            await _ticketRepository.DisposeAsync();
         }
         #endregion
     }

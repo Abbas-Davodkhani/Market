@@ -1,7 +1,10 @@
-﻿@using DataLayer.Entities.Site
+﻿@using Application.EntitiesExtensions
+@using DataLayer.Entities.Account
+@using DataLayer.Entities.Site
 
 @{
     var siteSetting = ViewBag.SiteSetting as SiteSetting;
+    var user = ViewBag.User as User;
 }
 
 <!--header area start-->
@@ -34,7 +37,7 @@
                         else
                         {
                             <ul>
-                                <li><a asp-area="User" asp-controller="Home" asp-action="Dashboard"> @User.Identity.Name، خوش آمدید </a></li>
+                                <li><a asp-area="User" asp-controller="Home" asp-action="Dashboard"> @user.GetUserFullName()، خوش آمدید </a></li>
                                 <li><a asp-controller="Account" asp-action="LogOut"> خروج </a></li>
                             </ul>
                         }
@@ -252,7 +255,7 @@
                             else
                             {
                                 <ul>
-                                    <li><a asp-area="User" asp-controller="Home" asp-action="Dashboard"> @User.Identity.Name، خوش آمدید </a></li>
+                                    <li><a asp-area="User" asp-controller="Home" asp-action="Dashboard"> @user.GetUserFullName() خوش آمدید </a></li>
                                     <li><a asp-controller="Account" asp-action="LogOut"> خروج </a></li>
                                 </ul>
                             }

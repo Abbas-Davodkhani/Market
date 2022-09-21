@@ -1,0 +1,8 @@
+﻿@model DataLayer.DTOs.Contacts.AnswerTicketDTO
+
+
+<form method="post" asp-action="AnswereTicket" asp-controller="Ticket" asp-area="User">
+    <input type="hidden" asp-for="Id" />
+    <textarea asp-for="Text" ckeditor="1"></textarea>
+    <button type="submit" class="btn btn-info">ارسال پاسخ</button>
+</form>
