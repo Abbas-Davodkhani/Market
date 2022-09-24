@@ -364,6 +364,64 @@ namespace DataLayer.Migrations
                     b.ToTable("Sliders");
                 });
 
+            modelBuilder.Entity("DataLayer.Entities.Store", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("AdminDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Mobile")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<long>("SellerId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("StoreAcceptanceDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StoreAcceptanceState")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StoreName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SellerId");
+
+                    b.ToTable("Stores");
+                });
+
             modelBuilder.Entity("DataLayer.Entities.Contacts.ContactUs", b =>
                 {
                     b.HasOne("DataLayer.Entities.Account.User", "User")
@@ -404,9 +462,22 @@ namespace DataLayer.Migrations
                     b.Navigation("Ticket");
                 });
 
+            modelBuilder.Entity("DataLayer.Entities.Store", b =>
+                {
+                    b.HasOne("DataLayer.Entities.Account.User", "Seller")
+                        .WithMany("Stores")
+                        .HasForeignKey("SellerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Seller");
+                });
+
             modelBuilder.Entity("DataLayer.Entities.Account.User", b =>
                 {
                     b.Navigation("ContactUses");
+
+                    b.Navigation("Stores");
 
                     b.Navigation("TicketMessages");
 
