@@ -1,6 +1,7 @@
 ﻿using DataLayer.Entities;
 using DataLayer.Entities.Account;
 using DataLayer.Entities.Contacts;
+using DataLayer.Entities.Products;
 using DataLayer.Entities.Site;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -25,6 +26,15 @@ namespace DataLayer.Context
         #endregion
         #region Store
         public DbSet<Store> Stores { get; set; }
+        #endregion
+        #region products
+
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+
+        public DbSet<Product> Products { get; set; }
+
+        public DbSet<ProductSelectedCategory> ProductSelectedCategories { get; set; }
+
         #endregion
         #region On Model Creating
         protected override void OnModelCreating(ModelBuilder modelBuilder)

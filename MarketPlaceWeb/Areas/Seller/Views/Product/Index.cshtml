@@ -1,0 +1,15 @@
+﻿@model DataLayer.DTOs.Products.ProductFilterDTO
+@{
+    ViewData["Title"] = "لیست محصولات";
+}
+
+@if (Model.Products != null && Model.Products.Any())
+{
+    <ul>
+        @foreach (var product in Model.Products)
+        {
+            <li>@product.Title</li>
+        }
+    </ul>
+}
+

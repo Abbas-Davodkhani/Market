@@ -163,6 +163,14 @@ namespace Application.Services.Implementations
 
             return false;
         }
+
+        public async Task<Store> GetLastActiveSellerByUserId(long userId)
+        {
+            return await _storeRepository.GetQuery()
+                .OrderByDescending(s => s.CreatedDate)
+                .FirstOrDefaultAsync(s =>
+                    s.SellerId == userId && s.StoreAcceptanceState == StoreAcceptanceState.Accepted);
+        }
         #endregion
         #region Dispose
         public async ValueTask DisposeAsync()

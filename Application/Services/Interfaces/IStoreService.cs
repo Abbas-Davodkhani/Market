@@ -2,6 +2,7 @@
 using DataLayer.DTOs.Common;
 using DataLayer.DTOs.Store;
 using DataLayer.DTOs.Stores;
+using DataLayer.Entities;
 using System;
 using System.Threading.Tasks;
 
@@ -16,6 +17,7 @@ namespace Application.Services.Interfaces
         Task<EditRequestStoreResult> EditStoreRequest(EditRequestStoreDTO request , long currentUserId);
         Task<bool> AcceptSellerRequest(long requestId);
         Task<bool> RejectSellerRequest(RejectItemDTO reject);
+        Task<Store> GetLastActiveSellerByUserId(long userId);
         #endregion
     }
 }

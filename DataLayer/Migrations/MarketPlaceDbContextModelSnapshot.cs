@@ -225,6 +225,136 @@ namespace DataLayer.Migrations
                     b.ToTable("TicketMessage");
                 });
 
+            modelBuilder.Entity("DataLayer.Entities.Products.Product", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductAcceptOrRejectDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductAcceptanceState")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShortDescription")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<long>("StoreId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StoreId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Products.ProductCategory", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long?>("ParentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UrlName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("ProductCategories");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Products.ProductSelectedCategory", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("ProductCategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductCategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductSelectedCategories");
+                });
+
             modelBuilder.Entity("DataLayer.Entities.Site.SiteBanner", b =>
                 {
                     b.Property<long>("Id")
@@ -462,6 +592,46 @@ namespace DataLayer.Migrations
                     b.Navigation("Ticket");
                 });
 
+            modelBuilder.Entity("DataLayer.Entities.Products.Product", b =>
+                {
+                    b.HasOne("DataLayer.Entities.Store", "Store")
+                        .WithMany()
+                        .HasForeignKey("StoreId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Store");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Products.ProductCategory", b =>
+                {
+                    b.HasOne("DataLayer.Entities.Products.ProductCategory", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Products.ProductSelectedCategory", b =>
+                {
+                    b.HasOne("DataLayer.Entities.Products.ProductCategory", "ProductCategory")
+                        .WithMany("ProductSelectedCategories")
+                        .HasForeignKey("ProductCategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("DataLayer.Entities.Products.Product", "Product")
+                        .WithMany("ProductSelectedCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ProductCategory");
+                });
+
             modelBuilder.Entity("DataLayer.Entities.Store", b =>
                 {
                     b.HasOne("DataLayer.Entities.Account.User", "Seller")
@@ -487,6 +657,16 @@ namespace DataLayer.Migrations
             modelBuilder.Entity("DataLayer.Entities.Contacts.Ticket", b =>
                 {
                     b.Navigation("TicketMessages");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Products.Product", b =>
+                {
+                    b.Navigation("ProductSelectedCategories");
+                });
+
+            modelBuilder.Entity("DataLayer.Entities.Products.ProductCategory", b =>
+                {
+                    b.Navigation("ProductSelectedCategories");
                 });
 #pragma warning restore 612, 618
         }

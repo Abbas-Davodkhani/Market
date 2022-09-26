@@ -27,6 +27,7 @@ builder.Services.AddScoped<IPasswordHelper, PasswordHelper>();
 builder.Services.AddScoped<ISiteService, SiteService>();
 builder.Services.AddScoped<IContactUsService, ContactUsService>();
 builder.Services.AddScoped<IStoreService, StoreService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 //builder.Services.AddSingleton(HtmlEn)
 #endregion 
 #region context
