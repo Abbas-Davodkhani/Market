@@ -1,6 +1,7 @@
 ﻿using Application.Extensions;
 using Application.Services.Interfaces;
 using DataLayer.DTOs;
+using DataLayer.DTOs.Common;
 using DataLayer.DTOs.Paging;
 using DataLayer.DTOs.Store;
 using DataLayer.DTOs.Stores;
@@ -131,6 +132,36 @@ namespace Application.Services.Implementations
             await _storeRepository.SaveChangesAsync();
 
             return EditRequestStoreResult.Success;
+        }
+        public async Task<bool> AcceptSellerRequest(long requestId)
+        {
+            var sellerRequest = await _storeRepository.GetByIdAsync(requestId);
+            if (sellerRequest != null)
+            {
+                sellerRequest.StoreAcceptanceState = StoreAcceptanceState.Accepted;
+                _storeRepository.UpdateEntity(sellerRequest);
+                await _storeRepository.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
+        }
+        public async Task<bool> RejectSellerRequest(RejectItemDTO reject)
+        {
+            var sellerRequest = await _storeRepository.GetByIdAsync(reject.Id);
+            if (sellerRequest != null)
+            {
+                sellerRequest.StoreAcceptanceState = StoreAcceptanceState.Rejected;
+                sellerRequest.StoreAcceptanceDescription = reject.RejectMessage;
+
+                _storeRepository.UpdateEntity(sellerRequest);
+                await _storeRepository.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
         }
         #endregion
         #region Dispose

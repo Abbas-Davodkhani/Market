@@ -6,7 +6,7 @@ namespace MarketPlaceWeb.Areas.User.Controllers.Base
     [Authorize]
     [Area("User")]
     [Route("user")]
-    public class UserBaseController : Controller
+    public class AdminBaseController : Controller
     {
         protected string SuccessMessage = "SuccessMessage";
         protected string ErrorMessage = "ErrorMessage";

@@ -35,6 +35,10 @@ namespace DataLayer.DTOs
             return this;
         }
 
+        public BasePaging GetCurrentPaging()
+        {
+            return this;
+        }
         #endregion
     }
 

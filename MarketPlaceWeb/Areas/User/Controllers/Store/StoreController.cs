@@ -9,7 +9,7 @@ using DataLayer.DTOs.Stores;
 
 namespace MarketPlaceWeb.Areas.User.Controllers
 {
-    public class StoreController : UserBaseController
+    public class StoreController : AdminBaseController
     {
         #region Constructor
         private readonly IStoreService _storeService;

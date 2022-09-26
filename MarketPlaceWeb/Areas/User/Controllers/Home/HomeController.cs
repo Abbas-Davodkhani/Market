@@ -3,7 +3,7 @@ using MarketPlaceWeb.Areas.User.Controllers.Base;
 
 namespace MarketPlaceWeb.Areas.User.Controllers.Home
 {
-    public class HomeController : UserBaseController
+    public class HomeController : AdminBaseController
     {
         #region Constructore
         #endregion

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MarketPlaceWeb.Areas.User.Controllers.Account
 {
-    public class AccountController : UserBaseController
+    public class AccountController : AdminBaseController
     {
         #region Constructor
         private readonly IUserServices _userService;

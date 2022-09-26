@@ -7,7 +7,7 @@ using MarketPlaceWeb.Areas.User.Controllers.Base;
 
 namespace MarketPlaceWeb.Areas.User.Controllers
 {
-    public class TicketController : UserBaseController
+    public class TicketController : AdminBaseController
     {
         #region Constructor
 
