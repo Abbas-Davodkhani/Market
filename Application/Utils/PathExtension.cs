@@ -20,6 +20,19 @@ namespace Application.Utils
         public static string UploadImageOrigin = "/img/Upload/";
         public static string UploadImageOriginServer = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Upload/");
         #endregion
+        #region Products
+
+        public static string ProductImage = "/content/images/product/origin/";
+
+        public static string ProductImageImageServer =
+            Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/content/images/product/origin/");
+
+        public static string ProductThumbnailImage = "/content/images/product/thumb/";
+
+        public static string ProductThumbnailImageImageServer =
+            Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/content/images/product/thumb/");
+
+        #endregion
         #region slider
 
         public static string SliderOrigin = "/img/slider/";

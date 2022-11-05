@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Application.Extensions;
 using Application.Services.Interfaces;
@@ -75,8 +76,58 @@ namespace Application.Services.Implementations
 
             return filter.SetProducts(allEntities).SetPaging(pager);
         }
+        public async Task<CreateProductResult> CreateProduct(CreateProductDTO product, string imageName, long storeId)
+        {
+            // create product
+            var newProduct = new Product
+            {
+                Title = product.Title,
+                Price = product.Price,
+                ShortDescription = product.ShortDescription,
+                Description = product.Description,
+                IsActive = product.IsActive,
+                StoreId = storeId,
+                ImageName = imageName,
+            };
+
+            await _productRepository.AddEntityAsync(newProduct);
+            await _productRepository.SaveChangesAsync();
+
+            // create product categories
+
+
+            // create product colors
+
+            return CreateProductResult.Success;
+        }
+        #endregion
+
+        #region ProductCategories
+
+        public async Task<List<ProductCategory>> GetAllProductCategoriesByParentIdAsync(long? parentId)
+        {
+            if (parentId == null || parentId == 0)
+            {
+                return await _productCategoryRepository.GetQuery()
+                    .AsQueryable()
+                    .Where(s => !s.IsDeleted && s.IsActive)
+                    .ToListAsync();
+            }
+
+            return await _productCategoryRepository.GetQuery()
+                .AsQueryable()
+                .Where(s => !s.IsDeleted && s.IsActive && s.ParentId == parentId)
+                .ToListAsync();
+        }
+
+        public async Task<List<ProductCategory>> GetAllActiveProductCategoriesAsync()
+        {
+            return await _productCategoryRepository.GetQuery().AsQueryable()
+                .Where(s => s.IsActive && !s.IsDeleted).ToListAsync();
+        }
 
         #endregion
+
         #region dispose
 
         public async ValueTask DisposeAsync()

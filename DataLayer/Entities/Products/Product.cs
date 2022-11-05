@@ -21,7 +21,7 @@ namespace DataLayer.Entities.Products
         public string ImageName { get; set; }
 
         [Display(Name = "قیمت محصول")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+       
         public int Price { get; set; }
 
         [Display(Name = "توضیحات کوتاه")]
@@ -47,6 +47,7 @@ namespace DataLayer.Entities.Products
         #region relations
 
         public ICollection<ProductSelectedCategory> ProductSelectedCategories { get; set; }
+        public ICollection<ProductColor> ProductColors { get; set; }
 
         public Store Store { get; set; }
 
@@ -54,8 +55,11 @@ namespace DataLayer.Entities.Products
     }
     public enum ProductAcceptanceState
     {
+        [Display(Name = "در حال بررسی")]
         UnderProgress,
+        [Display(Name = "تایید شده")]
         Accepted,
+        [Display(Name = "رد شده")]
         Rejected
     }
 

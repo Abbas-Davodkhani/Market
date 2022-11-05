@@ -323,6 +323,43 @@ namespace DataLayer.Migrations
                     b.ToTable("ProductCategories");
                 });
 
+            modelBuilder.Entity("DataLayer.Entities.Products.ProductColor", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<string>("ColorName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("ProductId1")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId1");
+
+                    b.ToTable("ProductColors");
+                });
+
             modelBuilder.Entity("DataLayer.Entities.Products.ProductSelectedCategory", b =>
                 {
                     b.Property<long>("Id")
@@ -613,6 +650,16 @@ namespace DataLayer.Migrations
                     b.Navigation("Parent");
                 });
 
+            modelBuilder.Entity("DataLayer.Entities.Products.ProductColor", b =>
+                {
+                    b.HasOne("DataLayer.Entities.Products.Product", "Product")
+                        .WithMany("ProductColors")
+                        .HasForeignKey("ProductId1")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("DataLayer.Entities.Products.ProductSelectedCategory", b =>
                 {
                     b.HasOne("DataLayer.Entities.Products.ProductCategory", "ProductCategory")
@@ -661,6 +708,8 @@ namespace DataLayer.Migrations
 
             modelBuilder.Entity("DataLayer.Entities.Products.Product", b =>
                 {
+                    b.Navigation("ProductColors");
+
                     b.Navigation("ProductSelectedCategories");
                 });
 

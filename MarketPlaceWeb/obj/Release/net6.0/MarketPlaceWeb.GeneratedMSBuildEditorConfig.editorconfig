@@ -1,0 +1,216 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MarketPlaceWeb
+build_property.RootNamespace = MarketPlaceWeb
+build_property.ProjectDir = E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\New folder\Market Place - C# Asp.net core 5\MarketPlaceApp\MarketPalce\MarketPlaceWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Shared/_AdminChatBarSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkNoYXRCYXJTZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Shared/_AdminFooterReferences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkZvb3RlclJlZmVyZW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Shared/_AdminHeaderReferences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkhlYWRlclJlZmVyZW5jZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Shared/_AdminNaveBarSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbk5hdmVCYXJTZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Shared/_AdminPagingPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pblBhZ2luZ1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Shared/_AdminSideBarSection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pblNpZGVCYXJTZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Shared/_RejectItemPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9SZWplY3RJdGVtUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/Store/StoreRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3RvcmVcU3RvcmVSZXF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Seller/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Seller/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXFByb2R1Y3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Seller/Views/Shared/Components/SellerSidebar/SellerSidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXFNoYXJlZFxDb21wb25lbnRzXFNlbGxlclNpZGViYXJcU2VsbGVyU2lkZWJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Seller/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/Seller/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2VsbGVyXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xBY2NvdW50XENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Account/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xBY2NvdW50XEVkaXRQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xIb21lXERhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Shared/Components/UserSideBar/UserSideBar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xTaGFyZWRcQ29tcG9uZW50c1xVc2VyU2lkZUJhclxVc2VyU2lkZUJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Shared/_AnswerTicketPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xTaGFyZWRcX0Fuc3dlclRpY2tldFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Store/EditStoreRequest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xTdG9yZVxFZGl0U3RvcmVSZXF1ZXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Store/RequestStorePanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xTdG9yZVxSZXF1ZXN0U3RvcmVQYW5lbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Store/StoreRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xTdG9yZVxTdG9yZVJlcXVlc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Ticket/AddTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xUaWNrZXRcQWRkVGlja2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Ticket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xUaWNrZXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/Ticket/TicketDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xUaWNrZXRcVGlja2V0RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Areas/User/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Account/ActivateMobile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY3RpdmF0ZU1vYmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Home/ContactUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/Components/HeaderSlider/HeaderSlider.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyU2xpZGVyXEhlYWRlclNsaWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/Components/SiteFooter/SiteFooter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2l0ZUZvb3RlclxTaXRlRm9vdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/Components/SiteHeader/SiteHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2l0ZUhlYWRlclxTaXRlSGVhZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/_CaptchaInput.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXB0Y2hhSW5wdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/_CaptchaScripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXB0Y2hhU2NyaXB0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/_FooterReferences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXJSZWZlcmVuY2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/_HeaderReferences.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJSZWZlcmVuY2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/_JqueryValidators.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9KcXVlcnlWYWxpZGF0b3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/_MainLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/_NoItemFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob0l0ZW1Gb3VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/Shared/_SiteMessages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaXRlTWVzc2FnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/New folder/Market Place - C\# Asp.net core 5/MarketPlaceApp/MarketPalce/MarketPlaceWeb/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

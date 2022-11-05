@@ -34,6 +34,7 @@ namespace DataLayer.Context
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ProductSelectedCategory> ProductSelectedCategories { get; set; }
+        public DbSet<ProductColor> ProductColors { get; set; }
 
         #endregion
         #region On Model Creating
