@@ -54,8 +54,9 @@ namespace MarketPlaceWeb.Areas.User.Controllers
         [HttpGet("store-requests")]
         public async Task<IActionResult> StoreRequests(FilterRequestStoreDTo filter)
         {
-            filter.TakeEntity = 5;
+            filter.TakeEntity = 1;
             filter.UserId = User.GetUserId();
+            filter.FilterStoreState = FilterStoreState.All;
 
             return View(await _storeService.FilterStores(filter));
         }

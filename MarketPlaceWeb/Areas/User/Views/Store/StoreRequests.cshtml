@@ -28,6 +28,12 @@
                     @await Component.InvokeAsync("UserSideBar")
                 </div>
                 <div class="col-sm-12 col-md-9 col-lg-9">
+                     <form asp-area="User" asp-controller="Store" asp-action="StoreRequests" id="filter-form" method="get">
+                        <input type="hidden" asp-for="PageId" />
+                        <input type="hidden" asp-for="Mobile" />
+                        <input type="hidden" asp-for="Address" />
+                        <input type="hidden" asp-for="Phone" />
+                    </form>
                     <!-- Tab panes -->
                     <div class="tab-content dashboard_content">
                         <h3>درخواست ها</h3>
@@ -57,7 +63,8 @@
                                     }
                                 </tbody>
                             </table>
-                            }
+                            } 
+                            <partial name="_PagingPartial" model="@Model.GetCurrentPaging()" />
                         </div>
                     </div>
                 </div>

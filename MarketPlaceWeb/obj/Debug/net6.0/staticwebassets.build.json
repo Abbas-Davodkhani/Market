@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PB+IrZgp9m5U61S+tsR9F7e5g5lo7i/NYqkWym63Nrk=",
+  "Hash": "yIHk7iKlXJxOmpuao99Gs6yjOOrTtsuToWku+nmTdUI=",
   "Source": "MarketPlaceWeb",
   "BasePath": "_content/MarketPlaceWeb",
   "Mode": "Default",
@@ -7529,6 +7529,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\audio\\sound.mp3"
+    },
+    {
+      "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Auth\\key-6aa1f244-5a9c-40db-8672-492009380116.xml",
+      "SourceId": "MarketPlaceWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\",
+      "BasePath": "_content/MarketPlaceWeb",
+      "RelativePath": "Auth/key-6aa1f244-5a9c-40db-8672-492009380116.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Auth\\key-6aa1f244-5a9c-40db-8672-492009380116.xml"
     },
     {
       "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\origin\\e6797fdfb73d4851ac0de49e1754a942.jpg",

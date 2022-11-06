@@ -6,11 +6,13 @@ using GoogleReCaptcha.V3;
 using GoogleReCaptcha.V3.Interface;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.IO;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 
@@ -37,6 +39,12 @@ builder.Services.AddDbContext<MarketPlaceDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MarketPlaceSqlConnection"));
 });
 #endregion
+#region data protection
+builder.Services.AddDataProtection()
+    .PersistKeysToFileSystem(new System.IO.DirectoryInfo(Directory.GetCurrentDirectory() + "\\wwwroot\\Auth"))
+    .SetApplicationName("Market")
+    .SetDefaultKeyLifetime(TimeSpan.FromDays(20));
+#endregion 
 #region authentication
 builder.Services.AddAuthentication(option =>
 {
