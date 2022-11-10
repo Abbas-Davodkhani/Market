@@ -13,6 +13,7 @@ namespace DataLayer.Repositories.GenericRepostitory
         //IQueryable<TEntity> GetAll(int pageIndex, int pageSize);
         //IQueryable<TEntity> GetAll(IEnumerable<TEntity> entities);
         Task AddEntityAsync(TEntity entity); // ADD
+        Task AddRangeEntitiesAsync(List<TEntity> entities);
         Task<TEntity> GetByIdAsync(long Id); // GetById
         void UpdateEntity(TEntity entity); // Update
         Task DeleteEntityAsync(long id);     // Delete

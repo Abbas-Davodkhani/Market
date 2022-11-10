@@ -32,6 +32,7 @@ namespace DataLayer.DTOs.Products
     public enum CreateProductResult
     {
         Success,
-        Error
+        Error, 
+        HasNoImage
     }
 }

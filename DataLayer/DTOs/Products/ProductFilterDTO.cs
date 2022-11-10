@@ -40,6 +40,7 @@ namespace DataLayer.DTOs.Products
 
     public enum FilterProductState
     {
+        All,
         UnderProgress,
         Accepted,
         Rejected ,

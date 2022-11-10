@@ -1,5 +1,6 @@
 ﻿using Application.Services.Interfaces;
 using DataLayer.DTOs.Products;
+using MarketPlaceWeb.Http;
 using MarketPlaceWeb.Utitlities.Extentions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MarketPlaceWeb.Web.Areas.Seller.Controllers
 {
-    [Route("products")]
+    
     public class ProductController : SellerBaseController
     {
         #region constructor
@@ -29,7 +30,7 @@ namespace MarketPlaceWeb.Web.Areas.Seller.Controllers
         {
             var store = await _storeService.GetLastActiveSellerByUserId(User.GetUserId());
             filter.StoreId = store.Id;
-            filter.FilterProductState = FilterProductState.Active;
+            filter.FilterProductState = FilterProductState.All;
             return View(await _productService.FilterProducts(filter));
         }
 
@@ -50,13 +51,33 @@ namespace MarketPlaceWeb.Web.Areas.Seller.Controllers
         {
             if (ModelState.IsValid)
             {
-                // todo: create product
-            }
+                var store = await _storeService.GetLastActiveSellerByUserId(User.GetUserId());
+                var res = await _productService.CreateProduct(product,store.Id,productImage);
 
+
+
+                switch (res)
+                {
+                    case CreateProductResult.HasNoImage:
+                        TempData[WarningMessage] = "لطفا تصویر محصول را وارد نمایید";
+                        break;
+                    case CreateProductResult.Error:
+                        TempData[ErrorMessage] = "عملیات ثبت محصول با خطا مواجه شد";
+                        break;
+                    case CreateProductResult.Success:
+                        TempData[SuccessMessage] = $"محصول مورد نظر با عنوان {product.Title} با موفقیت ثبت شد";
+                        return RedirectToAction("Index");
+                }
+            }
             ViewBag.Categories = await _productService.GetAllActiveProductCategoriesAsync();
             return View(product);
         }
-
+        #endregion
+        #region product categories
+        public async Task<ActionResult> GetProductCategoriesByParent(int parentId)
+        {
+            return JsonResponseStatus.SendStatus(JsonResponseStatusType.Success , "" , parentId);
+        }
         #endregion
     }
 }

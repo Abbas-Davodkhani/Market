@@ -1,15 +1,12 @@
 ﻿@using DataLayer.Entities.Products
 @model DataLayer.DTOs.Products.CreateProductDTO
+
 @{
     ViewData["Title"] = "ثبت محصول";
     var categories = ViewBag.Categories as List<ProductCategory>;
 }
 
 
-@section scripts
-{
-<partial name="_JqueryValidators" />
-}
 
 <div class="breadcrumbs_area">
     <div class="container">
@@ -41,7 +38,7 @@
                             <div class="login">
                                 <div class="login_form_container">
                                     <div class="account_login_form">
-                                        <form asp-area="Seller" asp-controller="Product" asp-action="CreateProduct" enctype="multipart/form-data">
+                                        <form asp-area="Seller" asp-controller="Product" asp-action="CreateProduct" id="create_product_form" enctype="multipart/form-data">
                                             <label>نام محصول</label>
                                             <input asp-for="Title">
                                             <span class="text-danger" asp-validation-for="Title"></span>
@@ -74,26 +71,56 @@
                                                     <ul>
                                                         <li>
                                                             <label>
-                                                                <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@category.Id" /> @category.Title
+                                                                <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@category.Id" main_category_checkbox="@category.Id" /> @category.Title
                                                             </label>
-                                                            @if (categories.Any(s => s.ParentId == category.Id))
-                                                            {
-                                                                <div>
 
-                                                                    @foreach (var subCategory in categories.Where(s => s.ParentId == category.Id))
-                                                                    {
-                                                                        <label>
-                                                                            <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@subCategory.Id" /> @subCategory.Title
-                                                                        </label>
-                                                                    }
-                                                                </div>
-                                                            }
+                                                            <div id="sub_categories_@category.Id" style="display: none">
+
+                                                                @foreach (var subCategory in categories.Where(s => s.ParentId == category.Id))
+                                                                {
+                                                                    <label>
+                                                                        <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@subCategory.Id" main_category_checkbox="@subCategory.Id" parent-category-id="@category.Id" /> @subCategory.Title
+                                                                    </label>
+                                                                    <div id="sub_categories_@subCategory.Id" style="display: none">
+
+                                                                        @foreach (var secondSubCategory in categories.Where(s => s.ParentId == subCategory.Id))
+                                                                        {
+                                                                            <label>
+                                                                                <input type="checkbox" name="@nameof(Model.SelectedCategories)" value="@secondSubCategory.Id" parent-category-id="@subCategory.Id" /> @secondSubCategory.Title
+                                                                            </label>
+                                                                        }
+                                                                    </div>
+                                                                }
+                                                            </div>
                                                         </li>
 
                                                     </ul>
                                                     <hr />
                                                 }
                                             }
+                                            <label>رنگ محصول</label>
+                                            <input type="text" placeholder="رنگ محصول" id="product_color_name_input">
+
+                                            <label>قیمت مضاف رنگ محصول</label>
+                                            <input type="number" placeholder="قیمت مضاف رنگ محصول" id="product_color_price_input">
+
+                                            <button class="btn btn-success" id="add_color_button">افزودن رنگ</button>
+                                            <br />
+                                            <br />
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>نام رنگ</th>
+                                                            <th>قیمت</th>
+                                                            <th>دستورات</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="list_of_product_colors">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
                                             <div class="save_button primary_btn default_button">
                                                 <button type="submit">افزودن</button>
                                             </div>
@@ -109,3 +136,9 @@
     </div>
 </section>
 
+
+@section scripts
+{
+<partial name="_JqueryValidators" />
+
+}

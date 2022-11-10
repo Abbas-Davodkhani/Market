@@ -344,10 +344,7 @@ namespace DataLayer.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("ProductId1")
+                    b.Property<long>("ProductId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -355,7 +352,7 @@ namespace DataLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductId1");
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductColors");
                 });
@@ -654,8 +651,9 @@ namespace DataLayer.Migrations
                 {
                     b.HasOne("DataLayer.Entities.Products.Product", "Product")
                         .WithMany("ProductColors")
-                        .HasForeignKey("ProductId1")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Product");
                 });

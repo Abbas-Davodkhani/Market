@@ -6,7 +6,7 @@ namespace DataLayer.Entities.Products
     public class ProductColor : BaseEntity
     {
         #region Properties
-        public int ProductId { get; set; }
+        public long ProductId { get; set; }
         [Required]
         public string ColorName { get; set; }
         public int Price { get; set; }

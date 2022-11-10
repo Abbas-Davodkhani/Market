@@ -1,12 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Extensions;
 using Application.Services.Interfaces;
+using Application.Utils;
 using DataLayer.DTOs.Paging;
 using DataLayer.DTOs.Products;
 using DataLayer.Entities.Products;
 using DataLayer.Repositories.GenericRepostitory;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Services.Implementations
@@ -18,12 +22,14 @@ namespace Application.Services.Implementations
         private readonly IGenericRepository<Product> _productRepository;
         private readonly IGenericRepository<ProductCategory> _productCategoryRepository;
         private readonly IGenericRepository<ProductSelectedCategory> _productSelectedCategoryRepository;
-
-        public ProductService(IGenericRepository<Product> productRepository, IGenericRepository<ProductCategory> productCategoryRepository, IGenericRepository<ProductSelectedCategory> productSelectedCategoryRepository)
+        private readonly IGenericRepository<ProductColor> _productColorReporsitory;
+        public ProductService(IGenericRepository<Product> productRepository, IGenericRepository<ProductCategory> productCategoryRepository,
+            IGenericRepository<ProductSelectedCategory> productSelectedCategoryRepository , IGenericRepository<ProductColor> productColorReporsitory)
         {
             _productRepository = productRepository;
             _productCategoryRepository = productCategoryRepository;
             _productSelectedCategoryRepository = productSelectedCategoryRepository;
+            _productColorReporsitory = productColorReporsitory;
         }
 
         #endregion
@@ -38,6 +44,8 @@ namespace Application.Services.Implementations
 
             switch (filter.FilterProductState)
             {
+                case FilterProductState.All:
+                    break;
                 case FilterProductState.Active:
                     query = query.Where(s => s.IsActive && s.ProductAcceptanceState == ProductAcceptanceState.Accepted);
                     break;
@@ -76,30 +84,68 @@ namespace Application.Services.Implementations
 
             return filter.SetProducts(allEntities).SetPaging(pager);
         }
-        public async Task<CreateProductResult> CreateProduct(CreateProductDTO product, string imageName, long storeId)
+        public async Task<CreateProductResult> CreateProduct(CreateProductDTO product, long storeId, IFormFile productImage)
         {
-            // create product
-            var newProduct = new Product
+            if (productImage == null) return CreateProductResult.HasNoImage;
+
+            var imageName = Guid.NewGuid().ToString("N") + Path.GetExtension(productImage.FileName);
+
+            var res = productImage.AddImageToServer(imageName, PathExtension.ProductImageImageServer, 150, 150, PathExtension.ProductThumbnailImageImageServer);
+
+            if (res)
             {
-                Title = product.Title,
-                Price = product.Price,
-                ShortDescription = product.ShortDescription,
-                Description = product.Description,
-                IsActive = product.IsActive,
-                StoreId = storeId,
-                ImageName = imageName,
-            };
+                // create product
+                var newProduct = new Product
+                {
+                    Title = product.Title,
+                    Price = product.Price,
+                    ShortDescription = product.ShortDescription,
+                    Description = product.Description,
+                    IsActive = product.IsActive,
+                    StoreId = storeId,
+                    ImageName = imageName,
+                };
 
-            await _productRepository.AddEntityAsync(newProduct);
-            await _productRepository.SaveChangesAsync();
+                await _productRepository.AddEntityAsync(newProduct);
+                await _productRepository.SaveChangesAsync();
 
-            // create product categories
+                // create product categories
+                var productSelectedCategories = new List<ProductSelectedCategory>();
 
+                foreach (var categoryId in product.SelectedCategories)
+                {
+                    productSelectedCategories.Add(new ProductSelectedCategory
+                    {
+                        ProductCategoryId = categoryId,
+                        ProductId = newProduct.Id
+                    });
+                }
 
-            // create product colors
+                await _productSelectedCategoryRepository.AddRangeEntitiesAsync(productSelectedCategories);
+                await _productSelectedCategoryRepository.SaveChangesAsync();
 
-            return CreateProductResult.Success;
+                // create product colors
+                var productSelectedColors = new List<ProductColor>();
+
+                foreach (var productColor in product.ProductColors)
+                {
+                    productSelectedColors.Add(new ProductColor
+                    {
+                        ColorName = productColor.ColorName,
+                        Price = productColor.Price,
+                        ProductId = newProduct.Id
+                    });
+                }
+
+                await _productColorReporsitory.AddRangeEntitiesAsync(productSelectedColors);
+                await _productSelectedCategoryRepository.SaveChangesAsync();
+
+                return CreateProductResult.Success;
+            }
+
+            return CreateProductResult.Error;
         }
+
         #endregion
 
         #region ProductCategories

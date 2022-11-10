@@ -31,6 +31,14 @@ namespace DataLayer.Repositories.GenericRepostitory
             entity.UpdatedDate = DateTime.Now;
             await _dbSet.AddAsync(entity);
         }
+        // Add Range
+        public async Task AddRangeEntitiesAsync(List<TEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                await AddEntityAsync(entity);
+            }
+        }
         // GetById
         public async Task<TEntity> GetByIdAsync(long Id)
         {
