@@ -50,6 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\Products\Index.cshtml" />
     <None Include="wwwroot\admin\css\4095-rtl.css.map" />
     <None Include="wwwroot\admin\css\4095.css.map" />
     <None Include="wwwroot\admin\css\4095.less" />

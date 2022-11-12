@@ -1,4 +1,5 @@
-﻿using DataLayer.DTOs.Products;
+﻿using DataLayer.DTOs.Common;
+using DataLayer.DTOs.Products;
 using DataLayer.Entities.Products;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -12,6 +13,8 @@ namespace Application.Services.Interfaces
         #region Products
         Task<ProductFilterDTO> FilterProducts(ProductFilterDTO filter);
         Task<CreateProductResult> CreateProduct(CreateProductDTO product, long storeId, IFormFile productImage);
+        Task<bool> AcceptSellerProduct(long productId);
+        Task<bool> RejectSellerProduct(RejectItemDTO reject);
         #endregion
         #region ProductCategories
         Task<List<ProductCategory>> GetAllProductCategoriesByParentIdAsync(long? parentId);

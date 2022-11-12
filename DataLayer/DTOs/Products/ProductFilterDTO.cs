@@ -1,6 +1,7 @@
 ﻿using DataLayer.DTOs.Paging;
 using DataLayer.Entities.Products;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace DataLayer.DTOs.Products
 {
@@ -35,16 +36,26 @@ namespace DataLayer.DTOs.Products
             return this;
         }
 
+        public ProductFilterDTO GetCurrentPaging()
+        {
+            return this;
+        }
         #endregion
     }
 
     public enum FilterProductState
     {
+        [Display(Name = "همه")]
         All,
+        [Display(Name = "در حال بررسی")]
         UnderProgress,
+        [Display(Name = "تایید شده")]
         Accepted,
-        Rejected ,
-        Active , 
+        [Display(Name = "رد شده")]
+        Rejected,
+        [Display(Name = "فعال")]
+        Active,
+        [Display(Name = "غیر فعال")]
         NotActive
     }
 }

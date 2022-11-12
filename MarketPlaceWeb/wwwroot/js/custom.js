@@ -90,12 +90,12 @@ $('#add_color_button').on('click',
         if (colorName !== '' && colorPrice !== '') {
             var currentColorsCount = $('#list_of_product_colors tr');
             var index = currentColorsCount.length;
-            var colorNameNode = `<input type="hidden" value="${colorName}"  name="ProductColors[${index}].ColorName" color-name-hidden-input="${index}">`;
-            var colorPriceNode = `<input type="hidden" value="${colorPrice}"  name="ProductColors[${index}].Price" color-price-hidden-input="${index}" >`;
+            var colorNameNode = `<input type="hidden" value="${colorName}"  name="ProductColors[${index}].ColorName" color-name-hidden-input="${colorName}-${colorPrice}">`;
+            var colorPriceNode = `<input type="hidden" value="${colorPrice}"  name="ProductColors[${index}].Price" color-price-hidden-input="${colorName}-${colorPrice}" >`;
             $('#create_product_form').append(colorNameNode);
             $('#create_product_form').append(colorPriceNode);
 
-            var colorTableNode = `<tr color-table-item="${index}"> <td> ${colorName} </td>  <td> ${colorPrice} </td>  <td> <a class="btn btn-danger text-white" onclick="removeProductColor(${index})">حذف</a> </td>  </tr>`;
+            var colorTableNode = `<tr color-table-item="${colorName}-${colorPrice}"> <td> ${colorName} </td>  <td> ${colorPrice} </td>  <td> <a class="btn btn-danger text-white" onclick="removeProductColor('${colorName}-${colorPrice}')">حذف</a> </td>  </tr>`;
             $('#list_of_product_colors').append(colorTableNode);
 
 

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using Application.Extensions;
 using Application.Services.Interfaces;
 using Application.Utils;
+using DataLayer.DTOs.Common;
 using DataLayer.DTOs.Paging;
 using DataLayer.DTOs.Products;
 using DataLayer.Entities.Products;
 using DataLayer.Repositories.GenericRepostitory;
+using MarketPlace.Application.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
@@ -63,6 +65,8 @@ namespace Application.Services.Implementations
                     break;
             }
 
+
+
             #endregion
 
             #region Filter
@@ -84,6 +88,37 @@ namespace Application.Services.Implementations
 
             return filter.SetProducts(allEntities).SetPaging(pager);
         }
+
+        public async Task<bool> AcceptSellerProduct(long productId)
+        {
+            var product = await _productRepository.GetByIdAsync(productId);
+            if (product != null)
+            {
+                product.ProductAcceptanceState = ProductAcceptanceState.Accepted;
+                product.ProductAcceptOrRejectDescription = $"محصول مورد نظر در تاریخ {DateTime.Now.ToShamsi()} مورد تایید سایت قرار گرفت";
+                _productRepository.UpdateEntity(product);
+                await _productRepository.SaveChangesAsync();
+                return true;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> RejectSellerProduct(RejectItemDTO reject)
+        {
+            var product = await _productRepository.GetByIdAsync(reject.Id);
+            if (product != null)
+            {
+                product.ProductAcceptanceState = ProductAcceptanceState.Rejected;
+                product.ProductAcceptOrRejectDescription = reject.RejectMessage;
+                _productRepository.UpdateEntity(product);
+                await _productRepository.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
+        }
         public async Task<CreateProductResult> CreateProduct(CreateProductDTO product, long storeId, IFormFile productImage)
         {
             if (productImage == null) return CreateProductResult.HasNoImage;
@@ -104,6 +139,7 @@ namespace Application.Services.Implementations
                     IsActive = product.IsActive,
                     StoreId = storeId,
                     ImageName = imageName,
+                    ProductAcceptanceState = ProductAcceptanceState.UnderProgress
                 };
 
                 await _productRepository.AddEntityAsync(newProduct);
