@@ -54,12 +54,19 @@
                                                         <img src="@(PathExtension.ProductThumbnailImage + product.ImageName)" width="75" />
                                                     </td>
                                                     <td>@product.Title</td>
-                                                    <td>
+                                                   <td>
                                                         <span class="danger">
-                                                            @product.ProductAcceptanceState.GetEnumDisplayName()
+                                                            @product.ProductAcceptanceState.GetEnumDisplayName() / @(product.IsActive ? "فعال": "غیرفعال")
+                                                            @if (product.ProductAcceptanceState == DataLayer.Entities.Products.ProductAcceptanceState.Rejected)
+                                                            {
+                                                                <hr />
+                                                                <div class="text-danger">
+                                                                    @Html.Raw(product.ProductAcceptOrRejectDescription)
+                                                                </div>
+                                                            }
                                                         </span>
                                                     </td>
-                                                    <td><a asp-area="User" asp-controller="Ticket" asp-action="TicketDetail" asp-route-ticketId="@product.Id" class="view">نمایش جزییات</a></td>
+                                                    <td><a asp-area="Seller" asp-controller="Product" asp-action="EditProduct" asp-route-productId="@product.Id" class="view">ویرایش محصول</a></td>
                                                 </tr>
                                             }
                                         </tbody>

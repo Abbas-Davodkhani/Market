@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bU0A2KIhgVlg14LeBVzgmoGeLeYczfrpqqZfpJ2WHp0=",
+  "Hash": "D4dv/ejIBAOBZjv0cPIZ3EHUi0/ZC4pCcwq32AP6ZJk=",
   "Source": "MarketPlaceWeb",
   "BasePath": "_content/MarketPlaceWeb",
   "Mode": "Default",
@@ -7548,6 +7548,23 @@
       "OriginalItemSpec": "wwwroot\\Auth\\key-6aa1f244-5a9c-40db-8672-492009380116.xml"
     },
     {
+      "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\origin\\708d66c2330a4442a3fd778e0c0017b4.png",
+      "SourceId": "MarketPlaceWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\",
+      "BasePath": "_content/MarketPlaceWeb",
+      "RelativePath": "Content/Images/Product/origin/708d66c2330a4442a3fd778e0c0017b4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Content\\Images\\Product\\origin\\708d66c2330a4442a3fd778e0c0017b4.png"
+    },
+    {
       "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\origin\\9fa094eb854f40aaa18b17fe697ef46d.png",
       "SourceId": "MarketPlaceWeb",
       "SourceType": "Discovered",
@@ -7563,6 +7580,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Content\\Images\\Product\\origin\\9fa094eb854f40aaa18b17fe697ef46d.png"
+    },
+    {
+      "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\origin\\e58dda219b444276bbfeb00247e342dc.png",
+      "SourceId": "MarketPlaceWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\",
+      "BasePath": "_content/MarketPlaceWeb",
+      "RelativePath": "Content/Images/Product/origin/e58dda219b444276bbfeb00247e342dc.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Content\\Images\\Product\\origin\\e58dda219b444276bbfeb00247e342dc.png"
     },
     {
       "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\origin\\e6797fdfb73d4851ac0de49e1754a942.jpg",
@@ -7582,6 +7616,23 @@
       "OriginalItemSpec": "wwwroot\\Content\\Images\\Product\\origin\\e6797fdfb73d4851ac0de49e1754a942.jpg"
     },
     {
+      "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\Thumb\\708d66c2330a4442a3fd778e0c0017b4.png",
+      "SourceId": "MarketPlaceWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\",
+      "BasePath": "_content/MarketPlaceWeb",
+      "RelativePath": "Content/Images/Product/Thumb/708d66c2330a4442a3fd778e0c0017b4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Content\\Images\\Product\\Thumb\\708d66c2330a4442a3fd778e0c0017b4.png"
+    },
+    {
       "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\Thumb\\9fa094eb854f40aaa18b17fe697ef46d.png",
       "SourceId": "MarketPlaceWeb",
       "SourceType": "Discovered",
@@ -7597,6 +7648,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Content\\Images\\Product\\Thumb\\9fa094eb854f40aaa18b17fe697ef46d.png"
+    },
+    {
+      "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\Thumb\\e58dda219b444276bbfeb00247e342dc.png",
+      "SourceId": "MarketPlaceWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\",
+      "BasePath": "_content/MarketPlaceWeb",
+      "RelativePath": "Content/Images/Product/Thumb/e58dda219b444276bbfeb00247e342dc.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Content\\Images\\Product\\Thumb\\e58dda219b444276bbfeb00247e342dc.png"
     },
     {
       "Identity": "E:\\New folder\\Market Place - C# Asp.net core 5\\MarketPlaceApp\\MarketPalce\\MarketPlaceWeb\\wwwroot\\Content\\Images\\Product\\Thumb\\e6797fdfb73d4851ac0de49e1754a942.jpg",

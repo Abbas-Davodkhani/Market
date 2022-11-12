@@ -20,6 +20,7 @@ namespace DataLayer.Repositories.GenericRepostitory
         Task DeletePermanetAsync(long id);   // Delete
         void DeleteEntity(TEntity entity); // Delete
         void DeletePermanet(TEntity entity); // Delete
+        void DeletePermanentEntities(List<TEntity> entities);
         Task SaveChangesAsync(); // Savechanges
     }
 }

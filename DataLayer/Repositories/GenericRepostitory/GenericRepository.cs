@@ -66,6 +66,11 @@ namespace DataLayer.Repositories.GenericRepostitory
         {
             DeletePermanet(await GetByIdAsync(Id));
         }
+
+        public void DeletePermanentEntities(List<TEntity> entities)
+        {
+            _context.RemoveRange(entities);
+        }
         // Delete
         public void DeletePermanet(TEntity entity)
         {

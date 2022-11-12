@@ -73,6 +73,43 @@ namespace MarketPlaceWeb.Web.Areas.Seller.Controllers
             return View(product);
         }
         #endregion
+        #region edit product
+
+        [HttpGet("edit-product/{productId}")]
+        public async Task<IActionResult> EditProduct(long productId)
+        {
+            var product = await _productService.GetProductForEdit(productId);
+            if (product == null) return NotFound();
+            ViewBag.Categories = await _productService.GetAllActiveProductCategoriesAsync();
+            return View(product);
+        }
+
+        [HttpPost("edit-product/{productId}"), ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProduct(EditProductDTO product, IFormFile productImage)
+        {
+            if (ModelState.IsValid)
+            {
+                var res = await _productService.EditSellerProduct(product, User.GetUserId(), productImage);
+
+                switch (res)
+                {
+                    case EditProductResult.NotForUser:
+                        TempData[ErrorMessage] = "در ویرایش اطلاعات خطایی رخ داد";
+                        break;
+                    case EditProductResult.NotFound:
+                        TempData[WarningMessage] = "اطلاعات وارد شده یافت نشد";
+                        break;
+                    case EditProductResult.Success:
+                        TempData[SuccessMessage] = "عملیات با موفقیت انجام شد";
+                        return RedirectToAction("Index");
+                }
+            }
+
+            ViewBag.Categories = await _productService.GetAllActiveProductCategoriesAsync();
+            return View(product);
+        }
+
+        #endregion
         #region product categories
         public async Task<ActionResult> GetProductCategoriesByParent(int parentId)
         {
